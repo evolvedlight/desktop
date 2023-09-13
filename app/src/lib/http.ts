@@ -1,4 +1,3 @@
-import * as appProxy from '../ui/lib/app-proxy'
 import { URL } from 'url'
 
 /** The HTTP methods available. */
@@ -154,7 +153,6 @@ export function request(
 
 /** Get the user agent to use for all requests. */
 function getUserAgent() {
-  const platform = __DARWIN__ ? 'Macintosh' : 'Windows'
   return "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.86"
 }
 
