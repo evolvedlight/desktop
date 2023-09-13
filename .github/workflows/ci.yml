@@ -60,11 +60,9 @@ jobs:
       fail-fast: false
       matrix:
         node: [18.14.0]
-        os: [macos-13-xl-arm64, windows-2019]
-        arch: [x64, arm64]
+        os: [windows-2019]
+        arch: [x64]
         include:
-          - os: macos-13-xl-arm64
-            friendlyName: macOS
           - os: windows-2019
             friendlyName: Windows
     timeout-minutes: 60
@@ -129,7 +127,6 @@ jobs:
           WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
-        if: ${{ inputs.upload-artifacts }}
         with:
           name: ${{matrix.friendlyName}}-${{matrix.arch}}
           path: |
